@@ -55,7 +55,9 @@ public class MainActivity extends Activity implements View.OnClickListener{
         public void onPostExecute(String result)
         {
             TextView tv = (TextView)findViewById(R.id.tv1);
+            EditText et = (EditText)findViewById(R.id.et1);
             tv.setText(result);
+            et.setText(result);
         }
 
 
@@ -74,7 +76,8 @@ public class MainActivity extends Activity implements View.OnClickListener{
     {
         MyArtist t = new MyArtist();
         EditText et = (EditText)findViewById(R.id.et1);
-        t.execute();
+        String artist = et.getText().toString();
+        t.execute(artist);
     }
 }
 
